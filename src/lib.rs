@@ -145,7 +145,7 @@ impl TodoEntry {
                     Some(Tag::Project(word[1..].to_string()))
                 } else if word.starts_with('@') {
                     Some(Tag::Context(word[1..].to_string()))
-                } else if let Some(index) = word.find(":") {
+                } else if let Some(index) = word.find(':') {
                     let (key, value) = word.split_at(index);
                     Some(Tag::KeyValue(key.to_string(), value[1..].to_string()))
                 } else {
